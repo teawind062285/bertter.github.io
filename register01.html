@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>賣家註冊頁面</title>
+
+
+    <script type = "text/javascript" >
+    function checkform() { //判斷函數
+        var str = document.forms[0].m_idcard.value; //取得檔案上傳路徑
+        //獲得大寫化的檔案自尾
+        var name = str.substring(str.lastIndexOf(".") + 1).toUpperCase();
+        //判斷檔案是否為以下格式
+        if (name != "JPG" && name != 'PNG&&name' = 'BMP') {
+            alert("格式不正確");                 //提示格式錯誤
+            
+            return false;                   //回傳錯誤
+
+        } else {
+            document.forms[0].submit();             //傳送表單
+
+
+        }
+    }
+    </script>
+
+</head>
+
+<body>
+    <h3>請依照格式提供下列資料：</h3>
+    <form method="post" action="register.php" onsubmit="checkform">
+        <br/> 中文姓名：
+        <input type="text" name="m_username">
+        <br/> 性別： 男
+        <input type="radio" name="m_gender" value="M"> 女
+        <input type="radio" name="m_gender" value="F">
+        <br/> 出生日期：
+        <input type="date" name="m_birth">
+        <br/> 學校電子郵件：
+        <input type="mail" name="m_email">
+        <br/> 密碼：
+        <input type="password" name="m_password">
+        <br/> 手機號碼：
+        <input type="tel" name="m_mobile">
+        <br/> 就讀學校：
+        <input type="text" name="m_school">
+        <br/> 入學年度：
+        <input type="number" name="m_studyyear">
+        <br/> 年級： 大一
+        <input type="radio" name="m_grade"value="1"> 大二
+        <input type="radio" name="m_grade" value="2"> 大三
+        <input type="radio" name="m_grade" value="3"> 大四
+        <input type="radio" name="m_grade" value="4"> 碩一
+        <input type="radio" name="m_grade" value="5"> 碩二
+        <input type="radio" name="m_grade" value="6"> 博士生
+        <input type="radio" name="m_grade" value="7">
+        <br/> 學生證圖片：
+        <input type="file" name="m_idcard">
+        <br />
+        <input type="submit" value="送出">
+    </form>
+</body>
+
+</html>
